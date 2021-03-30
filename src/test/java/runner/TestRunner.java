@@ -7,8 +7,8 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions
         (
-                features = "features\\SummerDresses.feature",
-                glue = {"stepsdefs"}
+                features = {"src/test/java/features"}
+                ,glue = {"stepsdefs"}
                 ,plugin = {"pretty","html:test-output", "json:json_output/cucumber.json","junit:junit_xml/cucumber.xml"}
                 ,dryRun = false
                 ,tags = {"@SmokeTest"}
