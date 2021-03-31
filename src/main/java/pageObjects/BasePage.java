@@ -12,16 +12,15 @@ import java.util.concurrent.TimeUnit;
 import static util.Constants.*;
 
 public class BasePage {
-    public static WebDriver driver;
+
 
     public static HomePage homePage;
     public static ProductDetailPage productDetailPage;
     public static ShoppingCartPage shoppingCartPage;
     public static SignInPage signInPage;
-
+    public static WebDriver driver;
 
     public WebDriver openUrl() {
-
         System.setProperty(BROWSER_DRIVER, DRIVER_PATH);
         driver = new ChromeDriver();
         driver.manage().deleteAllCookies();
@@ -34,9 +33,9 @@ public class BasePage {
         signInPage = PageFactory.initElements(driver, SignInPage.class);
         return driver;
     }
-
+/*
     public static void clickElement(WebDriver driver, WebElement element){
         WebDriverWait wait = new WebDriverWait(driver,30);
         wait.until(ExpectedConditions.elementToBeClickable(element));
-    }
+    }*/
 }

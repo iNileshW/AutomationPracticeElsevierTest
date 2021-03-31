@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 public class SummerDressesSteps extends BasePage {
-    public static WebDriver driver;
+    WebDriver driver;
 
     @Given("^user navigates to homepage$")
     public void user_navigates_to_homepage(){
@@ -22,9 +22,9 @@ public class SummerDressesSteps extends BasePage {
     @When("^user adds summer dress to cart$")
     public void user_adds_summer_dress_to_cart(){
         JavascriptExecutor js = ((JavascriptExecutor) driver);
-        js.executeScript("arguments[0].click();", homePage.summerDressElement);
+        js.executeScript("arguments[0].click();", homePage.summerDressImg);
         //Thread.sleep(2000);
-        homePage.addToCartButton.click();
+        productDetailPage.addToCartButton.click();
     }
 
     @When("^use clicks checkout$")
